@@ -2,7 +2,7 @@ version: '3.7'
 services:
   web:
     build: ./app
-    container_name: django-web
+    container_name: django-boot-web
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./app/:/usr/src/app/
@@ -14,7 +14,7 @@ services:
       - db
   db:
     image: mysql/mysql-server:5.7
-    container_name: django-db
+    container_name: django-boot-db
     volumes:
       - ./db_data:/var/lib/mysql
     restart: always
